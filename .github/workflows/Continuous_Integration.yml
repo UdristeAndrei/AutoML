@@ -5,10 +5,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Automatic requirements.txt for Python Project
-        uses: bndr/pipreqs-action@master
+      - name: Intall pipreqs
+        run: pip install pipreqs
 
-        # Put an example of mandatory inputs here
-        with:
-          PROJECT_PATH: AutoML   #default is the root of the repository
-          REQUIREMENT_PATH: AutoML/requirements.txt  #default is requirement.txt in the root of your repository 
+      - name: Generate requirements.txt
+        run: pipreqs
+
+      - name: Commit requirements.txt
+        run: |
+          git config --local user.email "udriste.andrei.98@gmail.com"
+          git config --local user.name "AndreiUdriste"
+          git add requirements.txt
+          git commit -m "Update requirements.txt"
+          git push
