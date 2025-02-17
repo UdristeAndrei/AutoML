@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Automatic requirements.txt for Python Project
-        uses: ryan-rozario/pipreqs-action@master
+        uses: bndr/pipreqs-action@master
 
         # Put an example of mandatory inputs here
         with:
