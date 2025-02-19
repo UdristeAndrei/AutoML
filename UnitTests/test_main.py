@@ -26,6 +26,6 @@ def test_autoML_load_data():
         test_autoML_load_data.load_data(path=123)
 
     # Test that the method loads the data
-    test_autoML_load_data.load_data(path = os.getcwd() + '\\UnitTests\\data\\movies.csv')
+    test_autoML_load_data.load_data(path = os.getcwd() + '/UnitTests/data/movies.csv')
     assert isinstance(test_autoML_load_data.data, pd.DataFrame)
 
